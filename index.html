@@ -14,21 +14,26 @@
         <h1>Your Library</h1>
     </div>
         
+    <div id="content-ctn">
+        <button id="display-add-book">New Book</button>
+        <div id="form-container">
+            <div id="book-form">
+                <form id='add-form'method="POST" action="#">
+                    <input class="book-input" type="text" id="title" placeholder="Title">
+                    <input class="book-input" type="text" id="auth" placeholder="Author">
+                    <input class="book-input" type="number" id="pages" placeholder="# of Pages">
+                    <label for="is-read">Read? </label>
+                    <input type="checkbox" id="is-read">
 
-        <div id="book-form">
-            <form method="POST" action="#">
-                <input type="text" id="title" placeholder="Title">
-                <input type="text" id="auth" placeholder="Author">
-                <input type="number" id="pages" placeholder="# of Pages">
-                <input type="text" id="is-read" placeholder="Read? (Yes/No)">
+                    <button id="add" type="submit">Add Book</button>
+                    <button id="close">Close</button>
 
-                <button id="add" type="submit">NEW BOOK</button>
-            </form>
+                </form>
+            </div>
         </div>
+            <div id="card-ctn"></div>
 
-        <div id="card-ctn">
         </div>
-
     </div>
     <script src="script.js"></script>
 </body>

@@ -1,17 +1,49 @@
 const cardCtn = document.querySelector("#card-ctn");
 const button = document.querySelector('#add');
-const infoDisp = document.querySelector('#display');
+//const infoDisp = document.querySelector('#display');
 const auth = document.querySelector('#auth');
 const title = document.querySelector('#title');
 const pages = document.querySelector('#pages');
 let readOption = document.querySelector('#is-read');
-
-
-
+const addBookCtn = document.querySelector('#form-container');
+const closeOverlay = document.querySelector('#close');
+const dispAddBook = document.querySelector('#display-add-book');
 
 let myLibrary = [];
 
 
+/*
+Pogram Event Listeners
+*/
+
+//Displays Overlay
+dispAddBook.onclick = function() {
+    event.preventDefault();
+    addBookCtn.style.display = 'grid';
+}
+
+//Removes Overlay
+closeOverlay.onclick = function(){
+    event.preventDefault();
+    addBookCtn.style.display = 'none';
+}
+
+//Add Book Event Listener
+button.addEventListener('click', () => {
+    
+    event.preventDefault();
+
+    //Verifies Book Title is not empty
+    if(title.value != ''){
+
+        let isRead = readOption.checked
+        
+        addBook(auth.value, title.value, pages.value, isRead);
+    }
+});
+
+
+//Book Constructor
 function Book(author, title, pages, isRead){
 
     this.author = author;
@@ -21,6 +53,7 @@ function Book(author, title, pages, isRead){
 
 }
 
+//Creates book & adds to Array
 function addBook(author, title, pages, isRead){
 
 
@@ -30,9 +63,7 @@ function addBook(author, title, pages, isRead){
     Display();
 }
 
-function remove(){
-   
-}
+//Displays myLibrary[] content
 function Display(){
 
     empty(cardCtn);
@@ -65,11 +96,13 @@ function Display(){
         remove.classList.add('remove');
         remove.textContent = 'Remove'
         remove.setAttribute('id', i);
+
+
         first.textContent = myLibrary[i].title;
         second.textContent = myLibrary[i].author;
         third.textContent = myLibrary[i].pages;
         
-        if(myLibrary[i].isRead == true){
+        if((myLibrary[i].isRead) == true){
             fifth.checked = false;
         }else{
             fifth.checked = true;
@@ -93,7 +126,7 @@ function Display(){
         
         
 
-
+    //Event Listener for remove Button
     remove.addEventListener('click', (item) => {
         let index = item.target.id
         myLibrary.splice(index, 1);
@@ -105,35 +138,9 @@ function Display(){
 
 
 
-
+//Clears Display
 function empty(element){
     while(element.firstElementChild){
         element.firstElementChild.remove();
     }
 }
-
-
-//Event Listeners for Buttons
-
-
-
-
-button.addEventListener('click', () => {
-    
-    event.preventDefault();
-
-    let isRead = false
-    let userReadOption = readOption.value;
-
-
-
-    if(userReadOption.toUpperCase() == 'YES'){
-        isRead = true;
-    } else{
-        isRead = false;
-    }
-
-    addBook(auth.value, title.value, pages.value, isRead);
-    
-});
-

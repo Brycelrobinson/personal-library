@@ -1,173 +1,260 @@
 html, body{
-    margin: 0;
-    padding: 0;
-    background-color: #64748b;
+  margin: 0;
+  padding: 0;
+  background-color: #64748b;
 }
 
 #container{
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 h1{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    font-size: 56px;
-    font-weight: 900;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 56px;
+  font-weight: 900;
 }
 
 #main-title{
-    display: grid;
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 #card-ctn{
-    background-color: #f1f5f9;
-    border: 3px solid black;
-    border-radius: 10px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    padding: 10px;
+  background-color: #f1f5f9;
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 80vw;;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 10px;
 
-    
+  
 }
 
 .card{
-    height: 300px;
-    width: 100px;
-    margin-left: 50px;
-    border: 2px solid black;
-    border-radius: 10px;
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    background-color: #2196F3;
+  min-height: 300px;
+  min-width: 100px;
+  padding: 5px;
+  margin-left: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  background-color: #2196F3;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 
 
 .title{
-    font-family: sans-serif;
-    font-size: 1.3em;
-    font-weight: 800;
-    color: black;
-    text-align: center;
+  font-family: sans-serif;
+  font-size: 1.3em;
+  font-weight: 800;
+  color: black;
+  text-align: center;
 }
 
 .author{
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: gray;
-    text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: gray;
+  text-align: center;
 }
 
 .pagesCount{
-    font-family: sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: rgb(184, 182, 182);
-    text-align: center;
-    padding: 3px 0 3px 0;
-    border-top: 4px solid #f59e0b;
-    border-bottom: 4px solid #f59e0b;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(184, 182, 182);
+  text-align: center;
+  padding: 3px 0 3px 0;
+  border-top: 4px solid #f59e0b;
+  border-bottom: 4px solid #f59e0b;
 
 }
 
 
 .is-read{
-    font-family: sans-serif;
-    text-align: center;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 .button-ctn{
-    display: grid;
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 58px;
-    height: 28px;
+  position: relative;
+  display: inline-block;
+  width: 58px;
+  height: 28px;
 }
 
 .switch input{
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider{
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: greenyellow;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: greenyellow;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
 
-  input:checked + .slider {
-    background-color: red;
-  }
+input:checked + .slider {
+  background-color: red;
+}
 
-  input:focus + .slider {
-    box-shadow: 0 0 1px red;
-  }
+input:focus + .slider {
+  box-shadow: 0 0 1px red;
+}
 
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
 
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+.slider.round {
+  border-radius: 34px;
+}
 
-  .remove{
-    color: white;
-    background-color: red;
-    border: 2px solid white;
-    border-radius: 5px;
-    height: 20px;
-    width: 35;
-  }
+.slider.round:before {
+  border-radius: 50%;
+}
 
-  .removeCtn{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  }
+.remove{
+  color: white;
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 20px;
+  width: 35;
+}
+
+.removeCtn{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+#content-ctn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+#display-add-book{
+  color: black;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+#form-container{
+display: none;
+z-index: 2;
+position: fixed;
+height: 100vh;
+width: 100vw;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0.5);
+align-items: center;
+justify-content: center;
+}
+
+#book-form{
+  background-color: whitesmoke;
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 40vw;
+  height: 50vh;
+  padding: 10px;
+
+
+}
+
+#add-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-input{
+  width: 100%;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+#add{
+  border: 3px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 5px gray;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 800;
+}
+
+#close{
+  color: white;
+  background-color: red;
+  height: 30px;
+  width: 100px;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: sans-serif;
+}
