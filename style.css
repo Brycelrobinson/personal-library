@@ -10,6 +10,7 @@ html, body{
   display: grid;
   align-items: center;
   justify-content: center;
+  grid-template-rows: 1fr .2fr 1fr;
   
 }
 
